@@ -22,6 +22,8 @@
 ; *	406DB6DB
 ; *	15400001
 
+	ORG 0h
+
 START:
 	LD	SP,STACK
 	LD	BC,3F80H	; Aufruf der Additionsroutine
@@ -256,7 +258,7 @@ AD_DN1:
 AD_DN2:
 	PUSH	BC		; Jetzt die Register fuer den
 	PUSH	DE		; Blocktransferbefehl retten
-	LD	BC,(OPSIZE*2)-1 ; beide Operanden verschieben
+	LD	BC,0+(OPSIZE*2)-1 ; beide Operanden verschieben
 	DEC	HL		; HL zeigt auf letztes Byte
 	PUSH	HL		; HL nach DE kopieren
 	POP	DE
