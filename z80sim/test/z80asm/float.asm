@@ -179,8 +179,8 @@ OUTCHAR:			; Zeichen auf Console ausgeben
 ; * fuer das Fliesskommapaket
 ; *
 
-MAXEXPO	EQU	255		; Maximal zulaessiger Exponent
-BIAS	EQU	127		; Bias des Exponenten
+MAXEXPO:	EQU	255		; Maximal zulaessiger Exponent
+BIAS:	EQU	127		; Bias des Exponenten
 
 ; *************************************************
 ; * Fliesskomma-Addition in Single-Precision
@@ -190,12 +190,12 @@ BIAS	EQU	127		; Bias des Exponenten
 
 ; * Es folgen Offset-Definitionen fuer Stack-relativen Zugriff
 
-FHL_ALT	EQU	0		; Top of Stack liegt HL
-FADR	EQU	2		; dann die Ruecksprungadresse
-OP1	EQU	4		; jetzt Offset-Definitionen fuer
-OP2	EQU	8		; Parameter-Uebergabe
+FHL_ALT:	EQU	0		; Top of Stack liegt HL
+FADR:	EQU	2		; dann die Ruecksprungadresse
+OP1:	EQU	4		; jetzt Offset-Definitionen fuer
+OP2:	EQU	8		; Parameter-Uebergabe
 
-OPSIZE	EQU	4		; Groesse eines Operanden
+OPSIZE:	EQU	4		; Groesse eines Operanden
 
 F_ADD:
 	PUSH	HL		; alten Basepointer retten
@@ -439,7 +439,7 @@ F_SUB:
 ; * Ergebnis: in BC-DE: MSB in B, LSB in E
 ; *
 
-TEMP	EQU	-10		; Offset lokale Variable (6 Byte)
+TEMP:	EQU	-10		; Offset lokale Variable (6 Byte)
 
 F_MUL:
 	PUSH	HL		; alten Basepointer retten
