@@ -3,7 +3,7 @@
 # the altenative options are provided for old ANSI C89 systems
 #
 CC = gcc
-#CC = cc
+CC = cc
 #CC = acc
 
 CFLAGS = -c -O3 -Wall -D_POSIX_C_SOURCE=200809L

@@ -51,8 +51,8 @@ include ../../z80core/Makefile.in-os
 
 ifeq ($(TARGET_OS),BSD)
 CC = cc
-PLAT_INCL = -I/usr/local/include 
-PLAT_LFLAGS = -L/usr/local/lib -lthr
+PLAT_INCL = -I/usr/local/include -I/usr/X11R6/include
+PLAT_LFLAGS = -L/usr/local/lib -lpthread -L/usr/X11R6/lib
 endif
 ifeq ($(TARGET_OS),WIN32)
 EXEC := $(EXEC:=.exe)

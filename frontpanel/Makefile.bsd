@@ -7,7 +7,7 @@ CC = c++
 
 # compiler switches
 
-INCLUDE = -I/usr/local/include
+INCLUDE = -I/usr/local/include -I/usr/X11R6/include
 DEFINES = 
 
 # Development

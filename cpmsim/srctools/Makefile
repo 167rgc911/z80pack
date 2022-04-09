@@ -4,8 +4,8 @@
 INSTALLDIR=${HOME}/bin
 #INSTALLDIR=/usr/local/bin
 
-#CC = cc
 CC = gcc
+CC = cc
 
 CFLAGS= -O3 -Wall
 

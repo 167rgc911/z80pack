@@ -28,7 +28,11 @@
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <sys/time.h>
+#if defined(__OpenBSD__)
+// no sys/timeb.h
+#else
 #include <sys/timeb.h>
+#endif
 #include <time.h>
 #include <unistd.h>
 #include "lp_utils.h"

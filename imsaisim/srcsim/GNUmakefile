@@ -53,8 +53,9 @@ include ../../z80core/Makefile.in-os
 
 ifeq ($(TARGET_OS),BSD)
 CC = cc
-PLAT_INCL = -I/usr/local/include 
-PLAT_LFLAGS = -L/usr/local/lib -lthr
+PLAT_INCL = -I/usr/local/include -I/usr/X11R6/include
+PLAT_LFLAGS = -lm -L/usr/local/lib -lpthread -L/usr/X11R6/lib
+MAKE = gmake
 endif
 ifeq ($(TARGET_OS),WIN32)
 EXEC := $(EXEC:=.exe)
@@ -113,7 +114,7 @@ $(SIM) : $(OBJ) $(SRC_LIBS)
 -include $(SRC:.c=.d)
 
 -lcivetweb: $(DIR_CIV:=/Makefile)
-	make -B -C $(DIR_CIV)
+	$(MAKE) -B -C $(DIR_CIV)
 
 build: _rm_obj all
 

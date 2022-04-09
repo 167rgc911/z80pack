@@ -35,6 +35,7 @@ DIR_CORE = ../../z80core
 
 VPATH = $(DIR_CORE)
 CC = gcc
+CC = cc
 
 ###
 ### START O/S PLATFORM DEPENDANT VARIABLES
@@ -45,6 +46,7 @@ ifeq ($(TARGET_OS),BSD)
 CC = cc
 PLAT_INCL =
 PLAT_LFLAGS =
+MAKE = gmake
 endif
 ifeq ($(TARGET_OS),WIN32)
 EXEC := $(EXEC:=.exe)
@@ -100,7 +102,7 @@ $(SIM) : $(OBJ) $(SRC_LIBS)
 -include $(SRC:.c=.d)
 
 -lcivetweb: $(DIR_CIV:=/Makefile)
-	make -B -C $(DIR_CIV)
+	$(MAKE) -B -C $(DIR_CIV)
 
 build: _rm_obj all
 
