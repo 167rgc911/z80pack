@@ -1,4 +1,5 @@
 CC = gcc
+CC = cc
 
 # Development
 #CFLAGS = -O3 -c -Wall -Wextra -fstack-protector-all -D_FORTIFY_SOURCE=2 
