@@ -116,7 +116,7 @@ clean:
 	./ulnsrc
 
 allclean:
-	make -f Makefile.bsd clean
+	$(MAKE) -f Makefile.bsd clean
 	rm -f ../cpmsim
 	rm -f ../auxiliaryin.txt ../auxiliaryout.txt ../printer.txt
 	rm -f ../disks/drive*.dsk
