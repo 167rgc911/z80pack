@@ -48,7 +48,6 @@ include ../../z80core/Makefile.in-os
 
 ifeq ($(TARGET_OS),BSD)
 CC = cc
-MAKE = gmake
 PLAT_INCL =
 PLAT_LFLAGS =
 endif

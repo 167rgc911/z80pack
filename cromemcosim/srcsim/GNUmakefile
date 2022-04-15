@@ -55,7 +55,6 @@ ifeq ($(TARGET_OS),BSD)
 CC = cc
 PLAT_INCL = -I/usr/local/include -I/usr/X11R6/include
 PLAT_LFLAGS = -L/usr/local/lib -lpthread -L/usr/X11R6/lib
-MAKE = gmake
 endif
 ifeq ($(TARGET_OS),WIN32)
 EXEC := $(EXEC:=.exe)
@@ -79,11 +78,11 @@ INCL = -iquote . -I$(DIR_CORE) -I$(DIR_IO) -I$(DIR_FP) -I$(DIR_NET) -I$(DIR_CIV:
 DEFS = -DCONFDIR=\"$(CONF)\" -DDISKSDIR=\"$(DISKS)\" -DBOOTROM=\"$(ROM)\"
 
 # Production - the default
-CFLAGS = -O3 -c -Wall -Wextra $(PLAT_CFLAGS) -U_FORTIFY_SOURCE $(DEFS) $(INCL)
+CFLAGS = -O3 -c -Wall -Wextra -Wno-self-assign $(PLAT_CFLAGS) -U_FORTIFY_SOURCE $(DEFS) $(INCL)
 
 # Development - use `MODE=DEV make build`
 ifeq ($(MODE), DEV)
-CFLAGS = -O3 -c -Wall -Wextra $(PLAT_CFLAGS) -fstack-protector-all -D_FORTIFY_SOURCE=2 $(DEFS) $(INCL)
+CFLAGS = -O3 -c -Wall -Wextra -Wno-self-assign $(PLAT_CFLAGS) -fstack-protector-all -D_FORTIFY_SOURCE=2 $(DEFS) $(INCL)
 endif
 
 # Debug - use `DEBUG=1 make build`

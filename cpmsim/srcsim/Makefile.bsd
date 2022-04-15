@@ -5,6 +5,7 @@ CONF=/usr/local/share/cpmsim/conf
 DISKS=/usr/local/share/cpmsim/disks
 
 CC = cc
+MAKE = gmake
 
 # Development
 #CFLAGS = -O3 -c -Wall -Wextra -Wno-self-assign -fstack-protector-all -D_FORTIFY_SOURCE=2 -DCONFDIR=\"${CONF}\" -DDISKSDIR=\"${DISKS}\"
