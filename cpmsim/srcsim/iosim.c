@@ -970,7 +970,7 @@ static void net_server_config(void)
 	char *s;
 	char fn[MAX_LFN];
 
-	strcpy(&fn[0], &confdir[0]);
+	strcpy(&fn[0], CONFDIR);
 	strcat(&fn[0], "/net_server.conf");
 
 	if ((fp = fopen(fn, "r")) != NULL) {
@@ -1012,7 +1012,7 @@ static void net_client_config(void)
 	char *s, *d;
 	char fn[MAX_LFN];
 
-	strcpy(&fn[0], &confdir[0]);
+	strcpy(&fn[0], CONFDIR);
 	strcat(&fn[0], "/net_client.conf");
 
 	if ((fp = fopen(fn, "r")) != NULL) {
