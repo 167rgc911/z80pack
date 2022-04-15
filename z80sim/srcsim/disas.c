@@ -673,7 +673,7 @@ void disass(int cpu, unsigned char **p, int adr, unsigned char *base)
 		len = (*optabi8080[**p].fun) (optabi8080[**p].text, p);
 
 #ifndef WANT_GUI
-	printf(Disass_Str);
+	printf("%s", Disass_Str);
 #endif
 #ifdef WANT_GUI
         get_opcodes(p, len);
